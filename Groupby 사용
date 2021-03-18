@@ -1,0 +1,26 @@
+'''
+df['Genre'].str.contains('Blues') -> 장르에 Blues 가 포함된 모든게 나옴
+df['Genre'].str.startswith('Blues') -> 장르에 Blues로 시작하는 모든게 나옴
+df['소재지도로명주소'].str.split(n=1,expand=True) -> n번째 띄워쓰기까지 나눠줌, expand True이면 나눈결과로 데이터프레임 생김
+df['brand'].map(brand_nation) -> brand를 brand_nation에 저장된 값으로 바꿔줌(brand_nation은 딕셔너리)
+ex) df['brand']= [DELL,APPLE...]
+     brand_nation={'DELL'='U.S'. , 'APPLE'='U.S.'}
+nation_groups=df.groupby('brand_nation') -> brand_nationd의 요소들을 기준으로 다양한 정보 제공(카테고리별로 비교분석 용이)
+nation_groups.count()
+nation_groups.max()
+nation_groups.first()
+nation_groups.mean()
+nation_groups.last()
+
+데이터 합치기
+1. inner join : 교집합 합치기
+한 column을 기준으로 합치기
+2. left outer join : 왼쪽에있는 제품에 대해  합치기
+3. right outer join : 오른쪽에 있는 제품에 대해 합치기
+4. full outer join : 걍 다 합치기
+
+pd.merge(price_df,quantity_df,on='Product') (on에 들어있는 column을 기준으로 합치기)
+pd.merge(price_df,quantity_df,on='Product',how='left')
+pd.merge(price_df,quantity_df,on='Product',how='right')
+pd.merge(price_df,quantity_df,on='Product',how='outer')
+'''
