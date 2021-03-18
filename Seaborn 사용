@@ -1,0 +1,27 @@
+'''
+!pip install seaborn==0.9.0
+
+import pandas as pd
+import seaborn as sns
+pd.plot(kind='hist',bins=20) (kind : scatter,hist,pie....else)
+sns.kdeplot() -> kde
+sns.distplot() -> histogram + kde
+sns.violinplot() -> box plot+ kde
+sns.kdeplot(body_df['Height],body_df['Weight'])-> 등고선
+sns.lmplot(data=dataframe,x=,y=)->회귀선으로 예측
+sns.catplot(data=dataframe,x='os',y='price',kind='box') -> 카테고리 별로 가격 비교 
+sns.catplot(data=dataframe,x='os',y='price',kind='strip') -> 카테고리 별로 가격 비교(각 점마다 표시해줌)
+sns.catplot(data=dataframe,x='os',y='price',kind='strip',hue='process brand')
+->그래프에서 hue에 따라서 색깔을 다르게 해줌
+sns.catplot(data=dataframe,x='os',y='price',kind='swarm',hue='process brand')
+-> 점들이 겹쳐지지 않고 따로 떨어져서 보임
+sns.stripplot(data=dataframe,x='',y='',hue)
+
+df.corr() -> 상관계수
+sns.heatmap(df.corr())-> 상관계수 결과를 시각화( 색이 밝을 수록 높은 상관관계
+sns.heatmap(df.corr(),annot=True) -> 히트맵에 숫자까지 표시
+
+sns.joinplot(data=datagfram,x=height,y=weight)-> x,y의 상관관계와 각 요소들의 분포들까지 파악 가능
+df.corr()['Age'].sort_values(ascending=True)
+sns.clustermap(corr) -> corr은 상관계수표 -> 연관된거 heatmap과 함께 표기
+'''
